@@ -227,10 +227,18 @@
       </svg>
       <h1>Hello, {{ title }}</h1>
 
+      <button (click)="onAnimate()">Animate</button>
+      <button (click)="onShrink()">shrink</button>
       <div [@divAnim]="state" style="width: 100px; height: 100px; color: white">
         yay I have animation
       </div>
-      <button (click)="onAnimate()">Animate</button>
+      <br />
+      <div
+        [@divShrink]="shrinkState"
+        style="width: 100px; height: 100px; color: white"
+      >
+        yay I can shrink
+      </div>
 
       <p>Congratulations! Your app is running. 🎉</p>
     </div>
