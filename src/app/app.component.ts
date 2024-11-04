@@ -37,11 +37,24 @@ import { Component } from '@angular/core';
         'shrink',
         style({
           backgroundColor: 'blue',
-          transform: 'translateX(100px) scale(0.5)',
+          transform: ' scale(0.5)',
         })
       ),
       transition('normal <=> highlighted', animate(300)),
-      transition('shrink <=> *', animate(300)),
+      transition('shrink <=> *', [
+        animate(
+          500,
+          style({ backgroundColor: 'green', transform: ' scale(1)' })
+        ),
+        animate(
+          500,
+          style({ backgroundColor: 'pink', transform: ' scale(0.9)' })
+        ),
+        animate(
+          500,
+          style({ backgroundColor: 'yellow', transform: ' scale(0.7)' })
+        ),
+      ]),
     ]),
   ],
 })
